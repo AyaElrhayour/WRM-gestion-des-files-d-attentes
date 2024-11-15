@@ -26,10 +26,10 @@ public class VisitingList {
     private LocalDateTime arrivalTime;
 
     @Column(name = "startTime")
-    private LocalDateTime startTime;
+    private LocalTime startTime;
 
     @Column(name = "endTime")
-    private LocalDateTime endTime;
+    private LocalTime endTime;
 
     @Column(name = "status")
     private Status status;
