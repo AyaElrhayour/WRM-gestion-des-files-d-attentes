@@ -1,4 +1,4 @@
-package com.youcode.wrm.Modles.Entity;
+package com.youcode.wrm.Models.Entity;
 
 
 import jakarta.persistence.*;
@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
@@ -15,7 +16,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Table(name = "vistor")
-public class Visitor {
+public class Visitor implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @UuidGenerator

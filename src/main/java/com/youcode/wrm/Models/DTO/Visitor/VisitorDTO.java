@@ -1,4 +1,4 @@
-package com.youcode.wrm.Modles.DTO.Visitor;
+package com.youcode.wrm.Models.DTO.Visitor;
 
 
 import jakarta.validation.constraints.NotBlank;
