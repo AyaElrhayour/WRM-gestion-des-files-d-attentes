@@ -1,23 +1,25 @@
-package com.youcode.wrm.Modles.Entity;
+package com.youcode.wrm.Models.Entity;
 
 
-import com.youcode.wrm.Modles.Entity.Embd.EmbedableId;
-import com.youcode.wrm.Modles.Enum.Status;
+import com.youcode.wrm.Models.Entity.Embd.EmbedableId;
+import com.youcode.wrm.Models.Enum.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Date;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Table(name = "vistingList")
-public class VisitingList {
+public class VisitingList implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @EmbeddedId
     private EmbedableId embedableId;
@@ -41,12 +43,10 @@ public class VisitingList {
     private Integer priority;
 
     @ManyToOne(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
-    @MapsId("visitor_id")
+    @MapsId("visitorId")
     private Visitor visitor;
 
-    @MapsId("waitinglist_id")
     @ManyToOne(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    @MapsId("waitingListId")
     private WaitingList waitingList;
-
-
 }

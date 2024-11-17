@@ -1,4 +1,4 @@
-package com.youcode.wrm.Modles.Enum;
+package com.youcode.wrm.Models.Enum;
 
 public enum Status {
     WAITING,

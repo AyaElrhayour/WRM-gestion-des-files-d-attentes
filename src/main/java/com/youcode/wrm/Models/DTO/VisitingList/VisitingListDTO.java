@@ -1,4 +1,4 @@
-package com.youcode.wrm.Modles.DTO.VisitingList;
+package com.youcode.wrm.Models.DTO.VisitingList;
 
 
 import lombok.AllArgsConstructor;

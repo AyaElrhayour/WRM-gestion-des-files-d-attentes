@@ -1,4 +1,4 @@
-package com.youcode.wrm.Modles.Entity;
+package com.youcode.wrm.Models.Entity;
 
 
 import jakarta.persistence.*;
@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -16,7 +18,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "waitingList")
-public class WaitingList {
+public class WaitingList implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @UuidGenerator
@@ -32,5 +36,5 @@ public class WaitingList {
     private Integer capacity;
 
     @OneToMany(mappedBy = "waitingList" , fetch = FetchType.EAGER)
-    private Set<VisitingList> visitingLists;
+    private List<VisitingList> visitingLists;
 }
